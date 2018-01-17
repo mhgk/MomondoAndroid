@@ -25,6 +25,4 @@ class DateUtils {
     fun formatMilLisToDayAndMonth(date: Long): String =
             dateFormatter
                     .print(date)
-
-
-}
+    }

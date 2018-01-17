@@ -1,6 +1,6 @@
 package dk.momondo.momondolight.flightsearch.repository
 
-import dk.momondo.momondolight.flightsearch.FlightApiCreator
+import dk.momondo.momondolight.flightsearch.api.FlightApiCreator
 import dk.momondo.momondolight.flightsearch.model.*
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -13,22 +13,6 @@ object FlightRepository {
     private val flightApi = FlightApiCreator
             .createApi()
 
-    //
-//    Observable
-//    .range(0, it.size - 1)
-//    .flatMap(
-//    {
-//        v ->
-//        Timber.d("count: %s", v)
-//        val date = DateTime.now()
-//
-//        fetchEventsForRoom(
-//                calendarService,
-//                it[v].email,
-//                date)
-//                .toObservable()
-//    })
-//    .toList()
     fun searchForFlights(flightQuery: FlightQuery): Single<List<Journey>>
             = flightApi
             .searchForFlights(flightQuery)
